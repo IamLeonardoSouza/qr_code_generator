@@ -17,6 +17,8 @@ pip install qrcode[pil]
 
 Para gerar um QR Code para um link diferente, modifique a variável link com o URL desejado:
 
+```bash
 link = "https://www.seulink.com"
+```
 
 Ao final da configuração, será criado um arquivo chamado qrcode.png no mesmo diretório onde o script é executado. O QR Code gerado pode ser escaneado para acessar o link fornecido.
