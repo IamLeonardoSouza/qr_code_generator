@@ -4,7 +4,7 @@ Este projeto é uma simples aplicação Python que gera um QR Code a partir de u
 
 ## Requisitos
 
-- Python 3.12.4 instalado
+- Python `3.12.4` instalado
 - Biblioteca `qrcode`
 
 ## Instalação
