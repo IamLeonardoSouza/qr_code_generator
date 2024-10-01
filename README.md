@@ -1,28 +1,28 @@
 # QR Code Generator
 
-Este projeto é uma simples aplicação Python que gera um QR Code a partir de um link fornecido. O QR Code é gerado usando a biblioteca `qrcode` e a imagem resultante é salva em um arquivo PNG.
+This project is a simple Python application that generates a QR Code from a provided link. The QR Code is generated using the `qrcode` library, and the resulting image is saved in a PNG file.
 
-## Requisitos
+## Requirements
 
-- Python `3.12.4` instalado
-- Biblioteca `qrcode`
+- Python `3.12.4` installed
+- `qrcode` library
 
-## Instalação
+## Installation
 
-Antes de executar o código, você precisa instalar a biblioteca `qrcode`. Você pode fazer isso usando o pip:
+Before running the code, you need to install the `qrcode` library. You can do this using pip:
 
 ```bash
 pip install qrcode[pil]
 ```
 
-Para gerar um QR Code para um link diferente, modifique a variável link com o URL desejado:
+To generate a QR Code for a different link, modify the link variable with the desired URL:
 
 ```bash
 link = "https://www.seulink.com"
 ```
 
-Ao final da configuração, será criado um arquivo chamado qrcode.png no mesmo diretório onde o script é executado. O QR Code gerado pode ser escaneado para acessar o link fornecido.
+At the end of the configuration, a file called qrcode.png will be created in the same directory where the script is executed. The generated QR Code can be scanned to access the link provided.
 
-Exemplo de QR Code funcional:
+Example of a functional QR Code:
 
 ![Logotipo do Projeto](images/qrcode.png)
