@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de QR Code</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.0/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.0/flowbite.min.js"></script>
+</head>
+<body class="bg-gray-100 p-8">
+    <div class="max-w-md mx-auto bg-white rounded-lg shadow-lg p-6">
+        <h1 class="text-3xl font-bold text-center text-gray-800 mb-6">Gerador de QR Code</h1>
+
+        <form method="POST" enctype="multipart/form-data" class="space-y-4">
+            {% csrf_token %}
+            
+            <div>
+                <label for="url" class="block text-sm font-medium text-gray-700">URL</label>
+                <input type="url" name="url" id="url" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200" placeholder="Digite a URL" required>
+            </div>
+
+            <div>
+                <label for="color" class="block text-sm font-medium text-gray-700">Cor do QR Code (opcional)</label>
+                <input type="color" name="color" id="color" class="mt-1 w-full border border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200" value="#000000">
+            </div>
+
+            <div>
+                <label for="logo" class="block text-sm font-medium text-gray-700">Logo (opcional)</label>
+                <input type="file" name="logo" id="logo" accept="image/*" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200">
+            </div>
+
+            <button type="submit" class="w-full bg-blue-600 text-white font-semibold py-2 rounded-md hover:bg-blue-700 transition duration-200">Gerar QR Code</button>
+        </form>
+        
+        {% if qr_img %}
+            <h2 class="text-xl font-semibold text-gray-800 mt-6">Seu QR Code:</h2>
+            <div class="flex flex-col items-center mt-2">
+                <img src="data:image/png;base64,{{ qr_img }}" alt="QR Code" class="border border-gray-300 rounded-lg shadow-md" />
+                <a href="data:image/png;base64,{{ qr_img }}" download="qrcode.png" class="mt-4 w-full bg-blue-600 text-white font-semibold py-2 rounded-md hover:bg-blue-700 transition duration-200 text-center">Baixar QR Code</a>
+            </div>
+        {% endif %}
+
+    </div>
+</body>
+</html>
